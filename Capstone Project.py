@@ -312,7 +312,7 @@ def check_room_no(room):            #[B.1.a] Check if room exist and return Fals
                 return False
         return room
 
-def add_room_type():                #[B.1.b] Select room Type
+def add_room_type():                #[B.1.b] Choose room Type
     print("Please Choose Room Type: ")
     print("1. Standard")
     print("2. Superior")
@@ -394,7 +394,7 @@ def update_room():                  #[C.1] Handles Room Status Update
 def update_guest(index,fill):       #[C.2] Handles Guest Update needs (index of room, fill/erase)
     global rooms
     if fill == True:
-        rooms[index]['Guest Qty.'] = int(input('Number of guest(s): '))
+        rooms[index]['Guest Qty.'] = int(input('Number of guest(s): '))             #NOTE: I know how to create a error handle so if input is not int, then we request them to fill in again instead of crashing using TRY, but i believe it's not part of this module so we aren't allowed to use it
         rooms[index]['Guest']['Name'] = input("Booking Name: ")
         rooms[index]['Guest']['Origin'] = input("Origin: ")
         rooms[index]['Guest']['Phone No.'] = input("Phone No.: ")
@@ -419,8 +419,8 @@ def delete_menu():          #[D] Delete Menu - Delete a room or All rooms
     while True:
         room_status()
         print('List of menu:')
-        print('1. Remove a specific room from RMS list')
-        print('2. Remove ALL rooms from RMS list')
+        print('1. Remove a specific room from database')
+        print('2. Remove ALL rooms from database')
         print('3. Return to Main Menu')
         menu_no = input("Please input which Menu number you want to run: ")
         if menu_no == '1':
